@@ -15,7 +15,7 @@
                 href="{{ route('login') }}"
                 class="text-purple-600 hover:text-purple-500"
             >
-                login with existing account
+                войти в существующий аккаунт
             </a>
         </p>
 
@@ -26,7 +26,7 @@
         <button
             class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
         >
-            Email Password Reset Link
+            Прислать ссылку для восстановления пароля
         </button>
     </form>
 </x-app-layout>

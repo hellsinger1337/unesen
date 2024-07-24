@@ -1,7 +1,7 @@
 <x-app-layout>
     <form method="POST" action="{{ route('login') }}" class="w-[400px] mx-auto p-6 my-16">
         <h2 class="text-2xl font-semibold text-center mb-5">
-            Login to your account
+            LВойти в аккаунт
         </h2>
         <p class="text-center text-gray-500 mb-6">
             or
@@ -9,7 +9,7 @@
                 href="{{ route('register') }}"
                 class="text-sm text-purple-700 hover:text-purple-600"
             >
-                create new account
+                создать новый аккаунт
             </a>
         </p>
 
@@ -34,14 +34,14 @@
             </div>
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}" class="text-sm text-purple-700 hover:text-purple-600">
-                    Forgot Password?
+                    Забыли пароль?
                 </a>
             @endif
         </div>
         <button
             class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
         >
-            Login
+            Войти
         </button>
     </form>
 </x-app-layout>

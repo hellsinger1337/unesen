@@ -37,19 +37,19 @@ $categoryList = \App\Models\Category::getActiveAsTree();
             type="select"
             name="sort"
             class="w-full focus:border-purple-600 focus:ring-purple-600 border-gray-300 rounded">
-            <option value="price">Price (ASC)</option>
-            <option value="-price">Price (DESC)</option>
-            <option value="title">Title (ASC)</option>
-            <option value="-title">Title (DESC)</option>
-            <option value="-updated_at">Last Modified at the top</option>
-            <option value="updated_at">Last Modified at the bottom</option>
+            <option value="price">Цена по возрастанию</option>
+            <option value="-price">Цена по убыванию</option>
+            <option value="title">Название(А-Я)</option>
+            <option value="-title">Название(Я-А)</option>
+            <option value="-updated_at">Новинки в начале</option>
+            <option value="updated_at">Новинки в конце</option>
         </x-input>
 
     </div>
 
     <?php if ( $products->count() === 0 ): ?>
     <div class="text-center text-gray-600 py-16 text-xl">
-        There are no products published
+        По указанным фильтрам товара не найдено
     </div>
     <?php else: ?>
     <div
@@ -86,7 +86,7 @@ $categoryList = \App\Models\Category::getActiveAsTree();
                     </div>
                     <div class="flex justify-between py-3 px-4">
                         <button class="btn-primary" @click="addToCart()">
-                            Add to Cart
+                            В корзину
                         </button>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
                 href="{{ route('login') }}"
                 class="text-sm text-purple-700 hover:text-purple-600"
             >
-                login with existing account
+                войти в существующий аккаунт
             </a>
         </p>
 
@@ -42,7 +42,7 @@
         <button
             class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
         >
-            Signup
+            Зарегистрироваться
         </button>
     </form>
 </x-app-layout>

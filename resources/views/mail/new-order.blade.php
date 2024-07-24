@@ -1,10 +1,10 @@
 <h1>
-    New order has been created
+    Новый заказ создан!
 </h1>
 
 <table>
     <tr>
-        <th>Order ID</th>
+        <th>ID закза</th>
         <td>
             <a href="{{ $forAdmin ? env('BACKEND_URL').'/app/orders/'.$order->id : route('order.view', $order, true) }}">
                 {{$order->id}}
@@ -12,24 +12,24 @@
         </td>
     </tr>
     <tr>
-        <th>Order Status</th>
+        <th>Статус заказа</th>
         <td>{{ $order->status }}</td>
     </tr>
     <tr>
-        <th>Order Price</th>
+        <th>Цена заказа</th>
         <td>${{$order->total_price}}</td>
     </tr>
     <tr>
-        <th>Order Date</th>
+        <th>Дата заказа</th>
         <td>${{$order->created_at}}</td>
     </tr>
 </table>
 <table>
     <tr>
-        <th>Image</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Quantity</th>
+        <th>Изображение</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Количество</th>
     </tr>
     @foreach($order->items as $item)
         <tr>

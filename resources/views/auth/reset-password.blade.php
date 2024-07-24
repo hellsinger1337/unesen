@@ -2,7 +2,7 @@
     <div class="w-[400px] mx-auto my-16">
 
         <h2 class="text-2xl font-semibold text-center mb-5">
-            Enter your new password
+            Введите новый пароль
         </h2>
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />

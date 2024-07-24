@@ -1,7 +1,7 @@
 <h2>
-    Your order status was changed into "{{$order->status}}"
+    Статус заказа изменен на "{{$order->status}}"
 </h2>
 <p>
-    Link to your order:
+    Ссылка на ваш заказ:
     <a href="{{route('order.view', $order, true)}}">Order #{{$order->id}}</a>
 </p>
