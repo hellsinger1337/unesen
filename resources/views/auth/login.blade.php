@@ -1,10 +1,10 @@
 <x-app-layout>
     <form method="POST" action="{{ route('login') }}" class="w-[400px] mx-auto p-6 my-16">
         <h2 class="text-2xl font-semibold text-center mb-5">
-            LВойти в аккаунт
+            Войти в аккаунт
         </h2>
         <p class="text-center text-gray-500 mb-6">
-            or
+            или
             <a
                 href="{{ route('register') }}"
                 class="text-sm text-purple-700 hover:text-purple-600"
@@ -18,10 +18,10 @@
 
         @csrf
         <div class="mb-4">
-            <x-input type="email" name="email" placeholder="Your email address" :value="old('email')"/>
+            <x-input type="email" name="email" placeholder="Ваш email" :value="old('email')"/>
         </div>
         <div class="mb-4">
-            <x-input type="password" name="password" placeholder="Your password" :value="old('password')" />
+            <x-input type="password" name="password" placeholder="Ваш пароль" :value="old('password')" />
         </div>
         <div class="flex justify-between items-center mb-5">
             <div class="flex items-center">
@@ -30,7 +30,7 @@
                     type="checkbox"
                     class="mr-3 rounded border-gray-300 text-purple-500 focus:ring-purple-500"
                 />
-                <label for="loginRememberMe">Remember Me</label>
+                <label for="loginRememberMe">Запомнить меня</label>
             </div>
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}" class="text-sm text-purple-700 hover:text-purple-600">

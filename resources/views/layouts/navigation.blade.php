@@ -188,7 +188,7 @@
                 <li class="px-3 py-3">
                     <a
                         href="{{ route('register') }}"
-                        class="block text-center text-white bg-loginbtn-light py-2 px-3 rounded shadow-md hover:bg-loginbtn active:bg-loginbtn-dark transition-colors w-full"
+                        class="block text-center text-white bg-emerald-500 py-2 px-3 rounded shadow-md hover:bg-emerald-600 active:bg-emerald-700 transition-colors w-full"
                     >
                         Зарегистрироваться
                     </a>
@@ -369,7 +369,7 @@
                 <li>
                     <a
                         href="{{ route('register') }}"
-                        class="inline-flex items-center text-white bg-loginbtn py-2 px-3 rounded shadow-md hover:bg-loginbtn-dark active:bg-loginbtn-light transition-colors mx-5"
+                        class="inline-flex items-center text-white bg-emerald-500 py-2 px-3 rounded shadow-md hover:bg-emerald-600 active:bg-emerald-700 transition-colors mx-5"
                     >
                         Зарегистрироваться
                     </a>

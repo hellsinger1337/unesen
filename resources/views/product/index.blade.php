@@ -66,7 +66,7 @@ $categoryList = \App\Models\Category::getActiveAsTree();
                         'price' => $product->price,
                         'addToCartUrl' => route('cart.add', $product)
                     ]) }})"
-                    class="border border-1 border-gray-200 rounded-md hover:border-product-dark transition-colors bg-product"
+                    class="border border-1 border-product rounded-md hover:border-product-dark transition-colors bg-product"
                 >
                     <a href="{{ route('product.view', $product->slug) }}"
                        class="aspect-w-3 aspect-h-2 block overflow-hidden">

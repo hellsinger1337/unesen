@@ -12,29 +12,29 @@ export default {
         extend: {
             colors: {
                 header: {
-                    light: '#E18B74', // Поярче
-                    DEFAULT: '#CF735B', // Основной цвет
-                    dark: '#A85C46', // Потусклее
+                    light: '#404040', // Dark gray
+                    DEFAULT: '#202020', // Main dark gray
+                    dark: '#000000', // Almost black
                 },
                 product: {
-                    light: '#C3D5E1', // Поярче
-                    DEFAULT: '#B0C5D6', // Основной цвет
-                    dark: '#8A9FAF', // Потусклее
+                    light: '#606060', // Dark gray
+                    DEFAULT: 'rgb(0,0,0,0)', // Main dark gray
+                    dark: '#202020', // Almost black
                 },
                 addtocartbtn: {
-                    light: '#8FCDE3', // Поярче
-                    DEFAULT: '#79BBDA', // Основной цвет
-                    dark: '#5F97B1', // Потусклее
+                    light: '#606060', // Dark gray
+                    DEFAULT: '#404040', // Main dark gray
+                    dark: '#202020', // Almost black
                 },
                 lightgray: {
-                    light: '#FFFFFF', // Поярче (практически белый)
-                    DEFAULT: '#F3F2F5', // Основной цвет
-                    dark: '#D1D0D3', // Потусклее
+                    light: '#A9A9A9', // Light gray
+                    DEFAULT: '#606060', // Dark gray
+                    dark: '#404040', // Darker gray
                 },
                 loginbtn: {
-                    light: '#74C1A0', // Поярче
-                    DEFAULT: '#5BAC8D', // Основной цвет
-                    dark: '#467A63', // Потусклее
+                    light: '#98FB98', // Pale green
+                    DEFAULT: '#32CD32', // Lime green
+                    dark: '#006400', // Dark green
                 },
             },
             fontFamily: {
