@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::middleware([CorsMiddleware::class])->group(function () {
 Route::middleware(['guestOrVerified'])->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('home');
     Route::get('/category/{category:slug}', [ProductController::class, 'byCategory'])->name('byCategory');
@@ -41,6 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/checkout/failure', [CheckoutController::class, 'failure'])->name('checkout.failure');
     Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
     Route::get('/orders/{order}', [OrderController::class, 'view'])->name('order.view');
+});
 });
 
 Route::post('/webhook/stripe', [CheckoutController::class, 'webhook']);

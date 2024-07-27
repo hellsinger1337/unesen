@@ -8,7 +8,8 @@
     <title>{{ config('app.name', 'Laravel E-commerce Website') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <link rel="preload" as="style" href="https://unesenchaem.ru/build/assets/app-TaLuiy-V.css" /><link rel="modulepreload" href="https://unesenchaem.ru/build/assets/app-D0ciCq4Y.js" /><link rel="stylesheet" href="https://unesenchaem.ru/build/assets/app-TaLuiy-V.css" /><script type="module" src="https://unesenchaem.ru/build/assets/app-D0ciCq4Y.js"></script> 
     <style>
         [x-cloak] {
             display: none !important;
