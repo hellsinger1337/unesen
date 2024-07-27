@@ -49,7 +49,7 @@
             start: { height: current + "px" },
             end: { height: full + "px" }
           }, () => el._x_isShown = true, () => {
-            if (el.getBoundingClientRect().height == full) {
+            if (Math.abs(el.getBoundingClientRect().height - full) < 1) {
               el.style.overflow = null;
             }
           });

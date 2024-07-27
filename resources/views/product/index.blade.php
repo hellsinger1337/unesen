@@ -28,7 +28,7 @@ $categoryList = \App\Models\Category::getActiveAsTree();
             }
         }">
         <form action="" method="GET" class="flex-1" @submit.prevent="updateUrl">
-            <x-input type="text" name="search" placeholder="Search for the products"
+            <x-input type="text" name="search" placeholder="Поиск"
                      x-model="searchKeyword"/>
         </form>
         <x-input
@@ -66,7 +66,7 @@ $categoryList = \App\Models\Category::getActiveAsTree();
                         'price' => $product->price,
                         'addToCartUrl' => route('cart.add', $product)
                     ]) }})"
-                    class="border border-1 border-gray-200 rounded-md hover:border-purple-600 transition-colors bg-white"
+                    class="border border-1 border-gray-200 rounded-md hover:border-product-dark transition-colors bg-product"
                 >
                     <a href="{{ route('product.view', $product->slug) }}"
                        class="aspect-w-3 aspect-h-2 block overflow-hidden">
@@ -84,7 +84,7 @@ $categoryList = \App\Models\Category::getActiveAsTree();
                         </h3>
                         <h5 class="font-bold">{{$product->price}}₽</h5>
                     </div>
-                    <div class="flex justify-between py-3 px-4">
+                    <div class="flex justify-center py-3 px-4">
                         <button class="btn-primary" @click="addToCart()">
                             В корзину
                         </button>

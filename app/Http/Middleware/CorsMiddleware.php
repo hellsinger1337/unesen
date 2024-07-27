@@ -16,16 +16,21 @@ class CorsMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        $headers = [
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Methods' => '*',
+            'Access-Control-Allow-Headers' => '*',
+            'Access-Control-Allow-Credentials' => '*'
+        ];
+
+        if ($request->getMethod() === "OPTIONS") {
+            return response()->json('OK', 200, $headers);
+        }
+
         $response = $next($request);
 
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        $response->headers->set('Access-Control-Allow-Headers', 'Authorization, Content-Type, X-Requested-With');
-
-        // Если это preflight-запрос, то нужно вернуть пустой ответ с нужными заголовками
-        if ($request->getMethod() === "OPTIONS") {
-            $response->setStatusCode(200);
-            $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        foreach ($headers as $key => $value) {
+            $response->headers->set($key, $value);
         }
 
         return $response;
