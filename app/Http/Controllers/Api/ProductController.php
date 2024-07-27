@@ -140,24 +140,34 @@ class ProductController extends Controller
         }
 
         foreach ($images as $id => $image) {
-            $path = 'images/' . Str::random();
-            if (!Storage::exists($path)) {
-                Storage::makeDirectory($path, 0755, true);
-            }
-            $name = Str::random().'.'.$image->getClientOriginalExtension();
-            if (!Storage::putFileAS('public_html/' . $path, $image, $name)) {
-                throw new \Exception("Unable to save file \"{$image->getClientOriginalName()}\"");
-            }
-            $relativePath = $path . '/' . $name;
+        $path = '../public_html/img/' . Str::random();
+        $publicPath = public_path($path);
 
-            ProductImage::create([
-                'product_id' => $product->id,
-                'path' => $relativePath,
-                'url' => URL::to(Storage::url($relativePath)),
-                'mime' => $image->getClientMimeType(),
-                'size' => $image->getSize(),
-                'position' => $positions[$id] ?? $id + 1
-            ]);
+        if (!file_exists($publicPath)) {
+            mkdir($publicPath, 0755, true);
+        }
+
+        $name = Str::random() . '.' . $image->getClientOriginalExtension();
+        $fullPath = $publicPath . '/' . $name;
+
+        if (!move_uploaded_file($image->getPathname(), $fullPath)) {
+            throw new \Exception("Unable to save file \"{$image->getClientOriginalName()}\"");
+        }
+
+        $relativePath = $path . '/' . $name;
+        $prefix = "../public_html/";
+
+        if (strpos($relativePath, $prefix) === 0) {
+            $relativePath = str_replace($prefix, '', $relativePath);
+        }
+        ProductImage::create([
+            'product_id' => $product->id,
+            'path' => $relativePath,
+            'url' => URL::to('/' . $relativePath),
+            'mime' => $image->getClientMimeType(),
+            'size' => $image->getSize(),
+            'position' => $positions[$id] ?? $id + 1
+        ]);
         }
     }
 

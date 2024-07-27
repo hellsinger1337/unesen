@@ -7,7 +7,9 @@
     class="flex justify-between bg-slate-800 shadow-md text-white"
 >
     <div>
-        <a href="{{ route('home') }}" class="block py-navbar-item pl-5"> <img src =https://ibb.co/pvc7XJK alt="УЧ"> </img></a>
+        <a href="{{ route('home') }}" class="block py-navbar-item pl-5"> <img src ="https://i.ibb.co/vxpFzZd/Photoroom.png" alt="УЧ" width="40" height="40"> </img>
+        
+        </a>
     </div>
     <!-- Responsive Menu -->
     <div
